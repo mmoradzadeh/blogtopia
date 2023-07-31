@@ -1,0 +1,40 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Blogtopia</title>
+</head>
+
+<body>
+  <div class="">
+    <header class="">
+      <h1>
+        <a href="/">Blogtopia</a>
+      </h1>
+        <nav class="">
+            <ul class="">
+            <li class="">
+                <a href="/">Home</a>
+            </li>
+            <li class="">
+                <a href="/dashboard">Dashboard</a>
+            </li>
+            {{#if user}}
+            <li class="">
+                <a href="/logout">Log-Out</a>
+            </li>
+            {{else}}
+            <li class="">
+                <a href="/login-signup">Log-In/Sign-Up</a>
+            </li>
+            {{/if}}
+            <li class="">
+                <a href="/contact">Contact</a>
+            </li>
+            </ul>
+    </header>
+      <main class="">
+        {{{ body }}}
+      </main>
+  </div>
+  </body>
+
+</html>
