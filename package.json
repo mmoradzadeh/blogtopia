@@ -4,15 +4,16 @@
   "description": "This app will allow users to have their own blogs and post articles of their choosing",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx nodemon",
     "start": "node server.js"
   },
   "author": "Mahdi Moradzadeh",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "bootstrap": "^3.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",

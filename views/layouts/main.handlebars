@@ -1,40 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Blogtopia</title>
+    <meta charset="UTF-8">
+    <title>Blogtopia</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-  <div class="">
-    <header class="">
-      <h1>
-        <a href="/">Blogtopia</a>
-      </h1>
-        <nav class="">
-            <ul class="">
-            <li class="">
-                <a href="/">Home</a>
-            </li>
-            <li class="">
-                <a href="/dashboard">Dashboard</a>
-            </li>
-            {{#if user}}
-            <li class="">
-                <a href="/logout">Log-Out</a>
-            </li>
-            {{else}}
-            <li class="">
-                <a href="/login-signup">Log-In/Sign-Up</a>
-            </li>
-            {{/if}}
-            <li class="">
-                <a href="/contact">Contact</a>
-            </li>
-            </ul>
-    </header>
-      <main class="">
-        {{{ body }}}
-      </main>
-  </div>
-  </body>
+    <div class="container">
+        <header class="text-center mb-4 header-section">
+            <h1>
+                <a href="/" class="text-decoration-none">Blogtopia</a>
+            </h1>
+            <nav class="">
+                <ul class="row justify-content-center nav-list d-flex">
+                    <li class="col-md-1 card">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="col-md-1 card">
+                        <a href="/dashboard" class="nav-link">Dashboard</a>
+                    </li>
+                    {{#if user}}
+                    <li class="col-md-1 card">
+                        <a href="/logout" class="nav-link">Log-Out</a>
+                    </li>
+                    {{else}}
+                    <li class="col-md-2 card">
+                        <a href="/login-signup" class="nav-link">Log-In/Sign-Up</a>
+                    </li>
+                    {{/if}}
+                    <li class="col-md-1 card">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+    </div>
+</body>
 
 </html>
