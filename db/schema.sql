@@ -1,0 +1,2 @@
+DROP my_blog IF EXISTS;
+CREATE DATABASE my_blog;
