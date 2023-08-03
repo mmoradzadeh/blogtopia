@@ -8,7 +8,7 @@
         <div class="panel-body">
             <span class="post-details">
                 <span class="post-details__author">by | {{post.user.username}} |</span>
-                <span class="post-details__date">{{post.createdAt}}</span>
+                <span class="post-details__date">{{format_time post.createdAt}}</span>
             </span>
             <p>{{post.content}}</p>
         </div>
@@ -18,5 +18,5 @@
     {{#each comments as |comment|}}
         {{> comments-details}}
     {{/each}}
-    <a href="../" class="btn btn-primary">Back</a>
+    <a href="../dashboard" class="btn btn-primary">Back</a>
 </section>

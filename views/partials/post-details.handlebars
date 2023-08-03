@@ -1,4 +1,4 @@
-<section style="background-color: white;">
+<section style="background-color: rgb(255, 255, 255);">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -9,7 +9,7 @@
         <div class="panel-body">
             <span class="post-details">
                 <span class="post-details__author">by | {{user.username}} </span>
-                <span class="post-details__date">{{createdAt}}</span>
+                <span class="post-details__date">{{format_time createdAt}}</span>
             </span>
             <p>{{content}}</p>
             <a href="/posts/{{id}}" class="btn btn-primary">Read More</a>

@@ -1,7 +1,18 @@
 body {
     background-color: green;
+    font-family: 'Open Sans', sans-serif;
 }
-
+main-body-style {
+    background-color: green;
+    font-family: 'Open Sans', sans-serif;
+}
+h2, h3, p, .form-group {
+    color: #337ab7;
+    padding: 10px 10px;
+}
+.post {
+    margin-bottom: 30px;
+}
 .header-section {
     background-color: rgb(5, 37, 5);
     color: white;
@@ -16,10 +27,15 @@ body {
 .comment-link {
     font-weight: bold;
     color: #337ab7; /* Bootstrap primary color */
+    padding: 10px 10px;
 }
 
 .post-details__date,
 .comment-details__date {
     font-size: small;
     color: #777; /* Grey color to de-emphasize */
+}
+
+.panel-body{
+    padding: 0 20px;
 }

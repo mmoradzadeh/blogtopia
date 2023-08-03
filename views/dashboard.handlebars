@@ -1,1 +1,7 @@
-<h2>Dashboard view</h2>
+<section>
+    <h2>Dashboard view</h2>
+    <h3>All Posts</h3>
+    {{#each posts as |post|}}
+    {{> post-details}}
+    {{/each}}
+</section>   
