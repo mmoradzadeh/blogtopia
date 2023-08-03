@@ -12,3 +12,14 @@ body {
     list-style: none;
     padding-left: 0;
 }
+
+.comment-link {
+    font-weight: bold;
+    color: #337ab7; /* Bootstrap primary color */
+}
+
+.post-details__date,
+.comment-details__date {
+    font-size: small;
+    color: #777; /* Grey color to de-emphasize */
+}

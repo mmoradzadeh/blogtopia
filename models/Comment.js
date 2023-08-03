@@ -5,12 +5,6 @@ class Comment extends Model {}
 
 Comment.init(
     {
-        id:{
-            type:DataTypes.UUIDV4,
-            allowNull:false,
-            primaryKey:true,
-            autoIncrement:true
-        },
         content:{
             type:DataTypes.STRING,
             allowNull:false,
@@ -18,14 +12,6 @@ Comment.init(
                 len:[1]
             }
         },
-        user_id:{
-            type:DataTypes.UUID,
-            references:{model:'user', key:'id'}
-        },
-        post_id:{
-            type:DataTypes.UUID,
-            references:{model:'post', key:'id'}
-        }
     },
     {
         sequelize,
