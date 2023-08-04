@@ -1,22 +1,25 @@
-<section style="background-color: white;">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <a href="/posts/{{id}}">{{post.title}}</a>
-            </h3>
+<section>
+    <h2>Post ID: {{post.id}}</h2>
+    <section style="background-color: white;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a href="/posts/{{id}}">{{post.title}}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <span class="post-details">
+                    <span class="post-details__author">by | {{post.user.username}} |</span>
+                    <span class="post-details__date">{{format_time post.createdAt}}</span>
+                </span>
+                <p>{{post.content}}</p>
+            </div>
         </div>
-        <div class="panel-body">
-            <span class="post-details">
-                <span class="post-details__author">by | {{post.user.username}} |</span>
-                <span class="post-details__date">{{format_time post.createdAt}}</span>
-            </span>
-            <p>{{post.content}}</p>
-        </div>
-    </div>
-    <p>_______________________________________________________</p>
-    <h3>Comments</h3>
-    {{#each comments as |comment|}}
-        {{> comments-details}}
-    {{/each}}
-    <a href="../dashboard" class="btn btn-primary">Back</a>
+        <p>_______________________________________________________</p>
+        <h3>Comments</h3>
+        {{#each comments as |comment|}}
+            {{> comments-details}}
+        {{/each}}
+        <a href="../dashboard" class="btn btn-primary">Back</a>
+    </section>
 </section>

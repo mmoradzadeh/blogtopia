@@ -1,5 +1,6 @@
 <div class="container">
     <h2 class="text-center">Home Page</h2>
+    {{#if loggedIn}}
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -27,4 +28,10 @@
             </div>
         </div>
     </div>
+    {{else}}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <p class="text-center">You must be <a href="/login">logged in</a> to create a post.</p>
+        </div>
+    {{/if}}
 </div>

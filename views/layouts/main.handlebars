@@ -6,8 +6,7 @@
     <title>Blogtopia</title>
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,34 +17,44 @@
             </h1>
             <nav class="">
                 <ul class="row justify-content-center nav-list d-flex">
-                    <li class="col-md-1 card">
+                    <li class="col-md-2 card">
                         <a href="/" class="nav-link">Home</a>
                     </li>
-                    <li class="col-md-1 card">
+                    <li class="col-md-2 card">
                         <a href="/dashboard" class="nav-link">Dashboard</a>
                     </li>
-                    {{#if user}}
-                    <li class="col-md-1 card">
-                        <a href="/logout" class="nav-link">Log-Out</a>
+                    {{#if loggedIn}}
+                    <li class="col-md-2 card">
+                        <a href="/" class="nav-link">
+                            <button class="btn-logout" id="logout">Log-Out</button>
+                        </a>
                     </li>
                     {{else}}
                     <li class="col-md-2 card">
-                        <a href="/login-signup" class="nav-link">Log-In/Sign-Up</a>
+                        <a href="/login" class="nav-link">Log-In</a>
+                    </li>
+                    <li class="col-md-2 card">
+                        <a href="/sign-up" class="nav-link">Sign-Up</a>
                     </li>
                     {{/if}}
-                    <li class="col-md-1 card">
+                    <li class="col-md-2 card">
                         <a href="/contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <div class= "main-body-style" style="background-color: rgb(52, 57, 5);">
+            <div class= "main-body-style" style="background-color: rgb(195, 199, 158);">
                 {{{ body }}}
+                <p>_______________________________________________________</p>
+
             </div>
             
         </main>
     </div>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

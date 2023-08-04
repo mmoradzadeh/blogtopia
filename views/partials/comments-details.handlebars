@@ -1,11 +1,12 @@
-<div class="panel panel-default" style="background-color: rgb(136, 149, 21);">
+<div class="panel panel-default">
     <div class="panel-body">
         <span>
             <a href="#" class="comment-link" data-id="{{id}}">{{user.username}}</a>
             <div>{{content}}</div>
             <span class="comment-details">
-                <span class="comment-details__date">{{created_at}}</span>
+                <span class="comment-details__date">{{format_time created_at}}</span>
             </span>
         </span>
     </div>
+    <p>_______________________</p>
 </div>
