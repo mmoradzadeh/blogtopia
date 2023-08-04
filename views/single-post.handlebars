@@ -3,9 +3,7 @@
     <section style="background-color: white;">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">
-                    <a href="/posts/{{id}}">{{post.title}}</a>
-                </h3>
+                <h3 class="panel-title">{{post.title}}</h3>
             </div>
             <div class="panel-body">
                 <span class="post-details">
@@ -21,5 +19,7 @@
             {{> comments-details}}
         {{/each}}
         <a href="../dashboard" class="btn btn-primary">Back</a>
+        <!-- Add a Comment button -->
+        <a href="/add-comment/{{post.id}}" class="btn btn-primary">Add a Comment</a>
     </section>
 </section>

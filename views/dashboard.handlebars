@@ -1,9 +1,9 @@
 <section class="container">
     <h2>Dashboard view</h2>
-    <h3>All Posts</h3>
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
+                <a href="/dashboard/posts/" class="btn btn-primary">All Posts</a>
                 {{#if loggedIn}}
                 <a href="/" class="btn btn-primary">Add New Post</a>
                 {{else}}
@@ -12,10 +12,4 @@
             </div>
         </div>
     </div>
-    {{#each posts as |post|}}
-    {{> post-details}}
-    {{/each}}
-
-
-
 </section>   

@@ -3,6 +3,14 @@ const {User, Post, Comment} = require('../models/');
 
 router.get('/', async (req, res) => {
     try {
+        res.render('dashboard', {loggedIn: req.session.loggedIn});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/posts', async (req, res) => {
+    try {
         const postData = await Post.findAll({
             include: [
                 {
@@ -12,7 +20,7 @@ router.get('/', async (req, res) => {
             ],
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('dashboard', {posts, loggedIn: req.session.loggedIn});
+        res.render('all-posts', {posts, loggedIn: req.session.loggedIn});
     } catch (err) {
         res.status(500).json(err);
     }

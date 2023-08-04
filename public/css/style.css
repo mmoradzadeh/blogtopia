@@ -10,6 +10,12 @@ h2, h3, p, .form-group {
     color: #337ab7;
     padding: 10px 10px;
 }
+h4 {
+    font-weight: bold;
+    color: black;
+    padding: 10px 10px;
+    font-size: 1.2rem !important;
+}
 .post {
     margin-bottom: 30px;
 }
