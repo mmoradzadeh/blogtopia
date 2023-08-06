@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 const {User, Post, Comment} = require('../models/');
 
 router.get('/', async (req, res) => {
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/posts', async (req, res) => {
+router.get('/posts', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [
@@ -26,7 +27,7 @@ router.get('/posts', async (req, res) => {
     }
 });
 
-router.get('/posts/:id', async (req, res) => {
+router.get('/posts/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -45,9 +46,49 @@ router.get('/posts/:id', async (req, res) => {
             ],
         });
         const post = postData.get({ plain: true });
+        if (post.userid === req.session.userId) {
+            post.isOwner = true;
+        } else {
+            post.isOwner = false;
+        }
+        console.log(post.isOwner);
         const comments = post.comments;
-        res.render('single-post', {post, comments, loggedIn: req.session.loggedIn});
+        res.render('single-post', {post, comments, isAuthor: post.isOwner, loggedIn: req.session.loggedIn});
     } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/posts/edit/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['id', 'username', 'email'],
+                }
+            ],
+        });
+        const post = postData.get({ plain: true });
+        res.render('edit-post', {post, loggedIn: req.session.loggedIn});
+    } catch {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/posts/delete/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['id', 'username', 'email'],
+                }
+            ],
+        });
+        const post = postData.get({ plain: true });
+        res.render('delete-post', {post, loggedIn: req.session.loggedIn});
+    } catch {
         res.status(500).json(err);
     }
 });

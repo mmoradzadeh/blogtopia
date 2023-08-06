@@ -9,7 +9,7 @@
                     <p class="text-muted">Share your thoughts and stories with the community</p>
                 </div>
                 <div class="panel-body">
-                    <form action="/create-post" method="POST">
+                    <form class="new-post-form">
                         <div class="form-group">
                             <label for="title">Title:</label>
                             <br>
@@ -28,6 +28,7 @@
             </div>
         </div>
     </div>
+    <script src="./js/newPost.js"></script>
     {{else}}
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -35,3 +36,4 @@
         </div>
     {{/if}}
 </div>
+

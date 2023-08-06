@@ -18,8 +18,14 @@
         {{#each comments as |comment|}}
             {{> comments-details}}
         {{/each}}
-        <a href="../dashboard" class="btn btn-primary">Back</a>
-        <!-- Add a Comment button -->
-        <a href="/add-comment/{{post.id}}" class="btn btn-primary">Add a Comment</a>
+        <button class="btn btn-primary" id="back-button" data-url="./">Back</button>
+
+        {{#if isAuthor}}
+        <button class="btn btn-primary" id="delete-button" data-url="/dashboard/posts/delete/{{post.id}}">Delete</button>
+        <button class="btn btn-primary" id="edit-button" data-url="/dashboard/posts/edit/{{post.id}}">Edit</button>
+        {{/if}}
+        <button class="btn btn-primary" id="add-comment-button" data-url="/dashboard/add-comment/{{post.id}}">Add a Comment</button>
+
     </section>
 </section>
+<script src="/js/single-post.js"></script>

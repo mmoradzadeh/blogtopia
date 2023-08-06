@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Confirm Deletion</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Are you sure you want to delete post {{post.id}}?</p>
+                    <form class="delete-post-form">
+                        <button type="submit" class="btn btn-danger">Confirm</button>
+                        <a href="/dashboard/posts/{{post.id}}" class="btn btn-primary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/deletePost.js"></script>
