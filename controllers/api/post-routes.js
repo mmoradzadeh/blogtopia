@@ -46,4 +46,18 @@ router.delete('/:id', withAuth , async (req, res) => {
     }
 });
 
+
+router.post('/comments', withAuth , async (req, res) => {
+    try {
+        const commentData = await Comment.create({
+            content: req.body.comment,
+            postid: req.body.post_id,
+            userid: req.session.userId,
+        });
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 module.exports = router;

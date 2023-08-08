@@ -93,4 +93,14 @@ router.get('/posts/delete/:id', withAuth, async (req, res) => {
     }
 });
 
+
+router.get('/add-comment/:id', withAuth, async (req, res) => {
+    try {
+        res.render('add-comment', {loggedIn: req.session.loggedIn});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;
