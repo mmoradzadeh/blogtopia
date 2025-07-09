@@ -1,7 +1,7 @@
 # myBlog
 This app will allow users to have their own blogs and post articles of their choosing
 ## Author
-* [**Mahdi Moradzadeh**](MahdiMoradzadeh.github.io)
+* [**Mehdi Moradzadeh**](MehdiMoradzadeh.github.io)
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Prerequisites
